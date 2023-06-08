@@ -44,6 +44,6 @@ The value of this second argument does not matter, but it needs to be an integer
 
 ## The `phi()` function
 
-The puzzles sometimes require that different variables be used for the example problem and the actual problem. The built-in function `phi()` is used to handle such situations.
+The puzzles sometimes require that different variables be used for the example problem and the actual problem, beyond just the input values. The built-in function `phi()` is used to handle such situations.
 
 `phi()` takes two inputs `actual` and `example` of the same type. It returns `actual` when solving the actual problem and `example` when using example input.
