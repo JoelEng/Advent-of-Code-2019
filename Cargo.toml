@@ -1,0 +1,31 @@
+[package]
+name = "aoc"
+version = "0.1.0"
+edition = "2021"
+default-run = "aoc"
+
+[lib]
+proc-macro = true
+
+[[bin]]
+name = "post"
+path = "src/post.rs"
+
+[dependencies]
+hashbrown = "0.13"
+serde_json = "1.0"
+bit-set = "0.5"
+memoize = "0.3.3"
+
+# main.rs dependencies
+# regex = "1.7"
+onig = "6"
+itertools = "0.10"
+
+# lib proc-macro dependencies
+syn = { version = "1.0", features = ["full"] }
+quote = "1.0"
+
+# post.rs dependencies
+dotenv = "0.15"
+ureq = "2.5"
