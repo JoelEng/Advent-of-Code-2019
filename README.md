@@ -47,3 +47,7 @@ The value of this second argument does not matter, but it needs to be an integer
 The puzzles sometimes require that different variables be used for the example problem and the actual problem, beyond just the input values. The built-in function `phi()` is used to handle such situations.
 
 `phi()` takes two inputs `actual` and `example` of the same type. It returns `actual` when solving the actual problem and `example` when using example input.
+
+## Helper functions
+
+If a function is needed in multiple days, it should be placed in the `helpers` subcrate.
