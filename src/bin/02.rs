@@ -1,23 +1,21 @@
-use helpers::opcode;
+use helpers::intcode::Intcode;
 
 #[aoc::main(02)]
-fn main(input: &str) -> (usize, usize) {
-    let opcodes = opcode::init(input);
+fn main(input: &str) -> (i32, i32) {
+    let mut intcode = Intcode::new(input);
     let mut p2 = 0;
     for n in 0..=99 {
         for v in 0..=99 {
-            if run(n, v, opcodes.clone()) == 19690720 {
+            if run(n, v, &mut intcode) == 19690720 {
                 p2 = 100 * n + v;
             }
         }
     }
 
-    (run(12, 2, opcodes.clone()), p2)
+    (run(12, 2, &mut intcode), p2)
 }
 
-fn run(noun: usize, verb: usize, mut opcodes: Vec<usize>) -> usize {
-    opcodes[1] = noun;
-    opcodes[2] = verb;
-    opcode::run(&mut opcodes);
-    opcodes[0]
+fn run(noun: i32, verb: i32, intcode: &mut Intcode) -> i32 {
+    intcode.noun_verb(noun, verb);
+    intcode.run()
 }

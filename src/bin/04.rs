@@ -39,5 +39,5 @@ fn count(i: u32, p2: bool) -> bool {
 }
 
 fn get_digit(num: u32, pos: u32) -> u8 {
-    (num / 10u32.pow(pos) % 10).try_into().unwrap()
+    (num / 10u32.pow(pos) % 10) as u8
 }
