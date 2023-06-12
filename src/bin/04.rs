@@ -1,3 +1,4 @@
+use helpers::get_digit;
 use itertools::Itertools;
 
 #[aoc::main(04)]
@@ -17,7 +18,7 @@ fn count(i: u32, p2: bool) -> bool {
     let mut pair_len = 1;
     let mut has_pair = false;
     for d in 0..6 {
-        let digit = get_digit(i, d);
+        let digit = get_digit(i, d, 1);
         if digit > prev {
             return false;
         }
@@ -36,8 +37,4 @@ fn count(i: u32, p2: bool) -> bool {
         has_pair = true;
     }
     has_pair
-}
-
-fn get_digit(num: u32, pos: u32) -> u8 {
-    (num / 10u32.pow(pos) % 10) as u8
 }
